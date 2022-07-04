@@ -35,9 +35,7 @@ Open _Terminal/Shell_ inside your _Project_ and run
     npm install --force
   ```
 
-### Getting Started with Create React App
-
-  This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Run App
 
   ```
     npm start
@@ -76,3 +74,4 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Fellow Micronauts
+- [Animation](https://css-tricks.com/fun-times-css-pixel-art/)
