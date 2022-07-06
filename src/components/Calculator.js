@@ -107,34 +107,3 @@ const Calculator = () => (
 );
 
 export default Calculator;
-
-/* <table id="root">
-  <thead>
-    <tr><input type="text" placeholder="0" /></tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AC</td>
-      <td>+/-</td>
-      <td>%</td>
-      <td>+</td>
-    </tr>
-    <tr>
-      <td>AC</td>
-      <td>+/-</td>
-      <td>%</td>
-      <td>+</td>
-    </tr>
-    <tr>
-      <td>AC</td>
-      <td>+/-</td>
-      <td>%</td>
-      <td>+</td>
-    </tr>
-    <tr>
-      <td>AC</td>
-      <td>+/-</td>
-      <td>%</td>
-    </tr>
-  </tbody>
-</table> */
