@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const btnValue = [
@@ -88,22 +89,31 @@ CalcButton.propTypes = {
   className: PropTypes.string.isRequired,
 };
 
-const Calculator = () => (
-  <div className="wrapper">
-    <span className="result">
-      0
-    </span>
-    <div className="keyPad">
-      {btnValue.map((btn) => (
-        <CalcButton
-          key={btn.name}
-          keyValue={btn.name}
-          className={btn.class}
-        />
-      ))}
-    </div>
-  </div>
+class Calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-);
+  render() {
+    return (
+
+      <div className="wrapper">
+        <span className="result">
+          0
+        </span>
+        <div className="keyPad">
+          {btnValue.map((btn) => (
+            <CalcButton
+              key={btn.name}
+              keyValue={btn.name}
+              className={btn.class}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Calculator;
