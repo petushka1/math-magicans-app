@@ -22,10 +22,9 @@ html {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-span {
-  padding: 5px 15px;
+.wrapper span {
+  padding: 15px 30px;
   margin: 1px;
-  background-color: rgb(222, 227, 234);
 }
 
 .result {
@@ -33,6 +32,7 @@ span {
   color: #fff;
   align-self: stretch;
   background-color: rgb(121, 124, 132);
+  padding: 15px 0;
 }
 
 .functional {
@@ -41,5 +41,10 @@ span {
 
 .zero {
   grid-column: 1 / 3;
+  background-color: rgb(222, 227, 234);
+}
+
+.input,
+.functionalTop {
   background-color: rgb(222, 227, 234);
 }
