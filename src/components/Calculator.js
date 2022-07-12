@@ -1,5 +1,4 @@
-import { Component } from 'react';
-// import PropTypes from 'prop-types';
+import { useState } from 'react';
 import calculate from '../logic/calculate';
 import Result from './result';
 import CalcButton from './button';
@@ -83,45 +82,39 @@ const btnValue = [
   },
 ];
 
-class Calculator extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: 0,
-      operation: null,
-    };
-    this.onButtonPress = this.onButtonPress.bind(this);
-  }
+const Calculator = () => {
+  const [state, setState] = useState({
+    total: null,
+    next: 0,
+    operation: null,
+  });
 
-  onButtonPress({ target }) {
-    this.setState((state) => calculate(state, target.innerText));
-  }
+  const onButtonPress = ({ target }) => {
+    setState((state) => calculate(state, target.innerText));
+  };
 
-  render() {
-    const { total, next, operation } = this.state;
-    return (
-      <div className="wrapper">
-        <div className="resultWrapper">
-          <Result
-            total={total}
-            next={next}
-            operation={operation}
-          />
-        </div>
-        <div className="keyPad">
-          {btnValue.map((btn) => (
-            <CalcButton
-              keyValue={btn.name}
-              key={btn.name}
-              className={btn.class}
-              handleClick={this.onButtonPress}
-            />
-          ))}
-        </div>
+  const { total, next, operation } = state;
+  return (
+    <div className="wrapper">
+      <div className="resultWrapper">
+        <Result
+          total={total}
+          next={next}
+          operation={operation}
+        />
       </div>
-    );
-  }
-}
+      <div className="keyPad">
+        {btnValue.map((btn) => (
+          <CalcButton
+            keyValue={btn.name}
+            key={btn.name}
+            className={btn.class}
+            handleClick={onButtonPress}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Calculator;
