@@ -18,7 +18,7 @@ const btnValue = [
     class: 'functionalTop',
   },
   {
-    name: '/',
+    name: '÷',
     class: 'functional',
   },
   {
@@ -94,9 +94,8 @@ class Calculator extends Component {
     this.onButtonPress = this.onButtonPress.bind(this);
   }
 
-  onButtonPress(buttonValue) {
-    const newState = calculate(this.state, buttonValue);
-    this.setState(() => newState);
+  onButtonPress({ target }) {
+    this.setState((state) => calculate(state, target.innerText));
   }
 
   render() {
@@ -116,7 +115,7 @@ class Calculator extends Component {
               keyValue={btn.name}
               key={btn.name}
               className={btn.class}
-              handleClick={this.handleClick}
+              handleClick={this.onButtonPress}
             />
           ))}
         </div>

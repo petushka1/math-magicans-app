@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import getText from '../element';
 
 class CalcButton extends Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick( {target} ) {
-
-    return target.textContent;
+    this.state = null;
   }
 
   render() {
-    const { keyValue, className } = this.props;
+    const { keyValue, className, handleClick } = this.props;
     return (
-      <button type="button" className={className} onClick={this.handleClick}>
+      <button type="button" className={className} onClick={handleClick}>
         {keyValue}
       </button>
     );
@@ -26,7 +20,7 @@ class CalcButton extends Component {
 CalcButton.propTypes = {
   keyValue: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
-  // handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default CalcButton;
