@@ -1,5 +1,8 @@
 import { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+import calculate from '../logic/calculate';
+import Result from './result';
+import CalcButton from './button';
 
 const btnValue = [
   {
@@ -15,7 +18,7 @@ const btnValue = [
     class: 'functionalTop',
   },
   {
-    name: '/',
+    name: '÷',
     class: 'functional',
   },
   {
@@ -80,34 +83,39 @@ const btnValue = [
   },
 ];
 
-const CalcButton = ({ keyValue, className }) => (
-  <span className={className} type="button">{keyValue}</span>
-);
-
-CalcButton.propTypes = {
-  keyValue: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
-};
-
 class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: null,
+      next: 0,
+      operation: null,
+    };
+    this.onButtonPress = this.onButtonPress.bind(this);
+  }
+
+  onButtonPress({ target }) {
+    this.setState((state) => calculate(state, target.innerText));
   }
 
   render() {
+    const { total, next, operation } = this.state;
     return (
-
       <div className="wrapper">
-        <span className="result">
-          0
-        </span>
+        <div className="resultWrapper">
+          <Result
+            total={total}
+            next={next}
+            operation={operation}
+          />
+        </div>
         <div className="keyPad">
           {btnValue.map((btn) => (
             <CalcButton
-              key={btn.name}
               keyValue={btn.name}
+              key={btn.name}
               className={btn.class}
+              handleClick={this.onButtonPress}
             />
           ))}
         </div>

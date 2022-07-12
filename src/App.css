@@ -4,14 +4,12 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.7em;
+  font-size: 16px;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   background-color: rgb(121, 124, 132);
   padding: 1px;
 }
@@ -32,7 +30,13 @@ html {
   color: #fff;
   align-self: stretch;
   background-color: rgb(121, 124, 132);
-  padding: 15px 0;
+  padding: 15px 5px 15px 0;
+}
+
+button {
+  outline: none;
+  padding: 10px 20px;
+  border: 1px solid rgb(121, 124, 132);
 }
 
 .functional {
