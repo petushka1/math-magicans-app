@@ -2,6 +2,7 @@ import { useState } from 'react';
 import calculate from '../logic/calculate';
 import Result from './result';
 import CalcButton from './button';
+import styles from './Calculator.module.css';
 
 const btnValue = [
   {
@@ -95,6 +96,10 @@ const Calculator = () => {
 
   const { total, next, operation } = state;
   return (
+    <div className={styles.pageWrapper}>
+    <h2 className={styles.text}>
+      Let's do something
+    </h2>
     <div className="wrapper">
       <div className="resultWrapper">
         <Result
@@ -114,6 +119,7 @@ const Calculator = () => {
         ))}
       </div>
     </div>
+  </div>
   );
 };
 
