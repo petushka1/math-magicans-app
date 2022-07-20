@@ -95,31 +95,32 @@ const Calculator = () => {
   };
 
   const { total, next, operation } = state;
+  const text = 'Let\'s do something';
   return (
     <div className={styles.pageWrapper}>
-    <h2 className={styles.text}>
-      Let's do something
-    </h2>
-    <div className="wrapper">
-      <div className="resultWrapper">
-        <Result
-          total={total}
-          next={next}
-          operation={operation}
-        />
-      </div>
-      <div className="keyPad">
-        {btnValue.map((btn) => (
-          <CalcButton
-            keyValue={btn.name}
-            key={btn.name}
-            className={btn.class}
-            handleClick={onButtonPress}
+      <h2 className={styles.text}>
+        {text}
+      </h2>
+      <div className="wrapper">
+        <div className="resultWrapper">
+          <Result
+            total={total}
+            next={next}
+            operation={operation}
           />
-        ))}
+        </div>
+        <div className="keyPad">
+          {btnValue.map((btn) => (
+            <CalcButton
+              keyValue={btn.name}
+              key={btn.name}
+              className={btn.class}
+              handleClick={onButtonPress}
+            />
+          ))}
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 
